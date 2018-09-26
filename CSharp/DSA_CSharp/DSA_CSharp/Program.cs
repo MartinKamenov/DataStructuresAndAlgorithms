@@ -13,8 +13,15 @@ namespace DSA_CSharp
             var list = new List<int>();
             list.Add(5);
             list.Add(15);
-            list.Add(15);
-            list.Add(15);
+            list.Add(19);
+            list.Add(25);
+            list.Add(27);
+            list.Insert(3, 20);
+            list.Remove(27);
+            list.Remove(15);
+            list.Add(5);
+            list.Remove(5);
+            list.RemoveAt(0);
 
             printList(list);
         }

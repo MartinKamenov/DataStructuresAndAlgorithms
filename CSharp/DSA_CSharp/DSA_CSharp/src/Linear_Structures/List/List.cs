@@ -17,6 +17,7 @@ namespace DSA_CSharp.Linear_Structures.List
             buffer = new T[DEFAULT_DATA_SIZE];
             count = 0;
         }
+
         public T this[int index]
         {
             get
@@ -97,14 +98,54 @@ namespace DSA_CSharp.Linear_Structures.List
 
         public void Insert(int index, T value)
         {
+            for (int i = count; i > index; i--)
+            {
+                buffer[i] = buffer[i - 1];
+            }
+
+            buffer[index] = value;
+
+            count++;
+
+            if (ShouldResize())
+            {
+                Resize();
+            }
         }
 
         public void Remove(T value)
         {
+            bool hasBeenFound = false;
+            int foundIndex = -1;
+            for (int i = 0; i < count; i++)
+            {
+                if (!hasBeenFound && buffer[i].Equals(value))
+                {
+                    hasBeenFound = true;
+                    foundIndex = i;
+                    break;
+                }
+            }
+
+            if (hasBeenFound)
+            {
+                SwapElementsAfteIndex(foundIndex);
+            }
         }
 
         public void RemoveAt(int index)
         {
+            SwapElementsAfteIndex(index);
+        }
+
+        private void SwapElementsAfteIndex(int index)
+        {
+            for (int i = index; i < count - 1; i++)
+            {
+                buffer[i] = buffer[i + 1];
+            }
+            buffer[count] = default(T);
+            count--;
         }
 
         private bool ShouldResize()
