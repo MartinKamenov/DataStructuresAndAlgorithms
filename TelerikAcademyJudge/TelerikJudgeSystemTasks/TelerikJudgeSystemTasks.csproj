@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Contracts\ITask.cs" />
     <Compile Include="Easy\AllocateArray.cs" />
+    <Compile Include="Easy\LongestIncreasingSequence.cs" />
     <Compile Include="Easy\LongestSequenceOfEqual.cs" />
     <Compile Include="Easy\MaxSumOfKElements.cs" />
     <Compile Include="Program.cs" />
