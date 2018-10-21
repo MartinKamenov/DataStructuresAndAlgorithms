@@ -1,4 +1,5 @@
 ﻿using DSA_CSharp.Linear_Structures.List;
+using DSA_CSharp.src.Sorting;
 using System;
 using System.Linq;
 using System.Text;
@@ -10,29 +11,13 @@ namespace DSA_CSharp
     {
         public static void Main(string[] args)
         {
-            var list = new List<int>();
-            list.Add(5);
-            list.Add(15);
-            list.Add(19);
-            list.Add(25);
-            list.Add(27);
-            list.Insert(3, 20);
-            list.Remove(27);
-            list.Remove(15);
-            list.Add(5);
-            list.Remove(5);
-            list.RemoveAt(0);
-
-            printList(list);
-        }
-
-        private static void printList(IList<int> list)
-        {
-            // Console.WriteLine(String.Join(" ", list));
-            for (int i = 0; i < list.Count; i++)
+            int[] numbers = new int[] 
             {
-                Console.Write(list[i] + " ");
-            }
+                5, 25, 3, 45, 88, 12, 11, 13, 202, 103, 14
+            };
+            MergeSort<int>.MergeSortWithoutAllocatingArray(0, numbers.Length, numbers);
+
+            Console.WriteLine(String.Join(" ", numbers));
         }
     }
 }
