@@ -1,4 +1,6 @@
 ﻿using DSA_CSharp.Linear_Structures.List;
+using DSA_CSharp.src.Algorythms;
+using DSA_CSharp.src.Graph_Structures;
 using DSA_CSharp.src.Sorting;
 using System;
 using System.Linq;
@@ -11,13 +13,13 @@ namespace DSA_CSharp
     {
         public static void Main(string[] args)
         {
-            int[] numbers = new int[] 
+            BinaryTree tree = new BinaryTree();
+            for (int i = 0; i < 10; i++)
             {
-                5, 25, 3, 45, 88, 12, 11, 13, 202, 103, 14
-            };
-            MergeSort<int>.MergeSortWithoutAllocatingArray(0, numbers.Length, numbers);
+                tree.AddNode(new BinaryTreeNode("Node " + i));
+            }
 
-            Console.WriteLine(String.Join(" ", numbers));
+            DFS.showNodeDFS(tree.root);
         }
     }
 }

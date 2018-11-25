@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Algorythms\DFS.cs" />
+    <Compile Include="src\Graph_Structures\BinaryTree.cs" />
+    <Compile Include="src\Graph_Structures\BinaryTreeNode.cs" />
     <Compile Include="src\Linear_Structures\List\IList.cs" />
     <Compile Include="src\Linear_Structures\List\List.cs" />
     <Compile Include="Program.cs" />
