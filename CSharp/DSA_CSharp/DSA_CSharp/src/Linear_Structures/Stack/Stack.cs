@@ -19,19 +19,25 @@ namespace DSA_CSharp.src.Linear_Structures.Stack
             buffer = new T[DEFAULT_DATA_SIZE];
             count = 0;
         }
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             return count == 0;
         }
 
-        public T pop()
+        public T Pop()
         {
-            throw new NotImplementedException();
+            T obj = this.buffer[count - 1];
+            this.buffer[--count] = default(T);
+            return obj;
         }
 
-        public void push()
+        public void Add(T obj)
         {
-            throw new NotImplementedException();
+            this.buffer[count++] = obj;
+            if (ShouldResize())
+            {
+                Resize();
+            }
         }
 
         private bool ShouldResize()

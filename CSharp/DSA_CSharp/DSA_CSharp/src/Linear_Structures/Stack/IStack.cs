@@ -2,10 +2,10 @@
 {
     public interface IStack<T>
     {
-        void push();
+        void Add(T obj);
 
-        T pop();
+        T Pop();
 
-        bool isEmpty();
+        bool IsEmpty();
     }
 }
