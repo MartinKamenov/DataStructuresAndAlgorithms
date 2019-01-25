@@ -22,18 +22,8 @@ namespace DSA_CSharp
 
             DFS.showNodeDFS(tree.root);*/
 
-            Stack<int> stack = new Stack<int>();
-            stack.Add(1);
-            stack.Add(2);
-            stack.Add(3);
-            stack.Add(4);
-            stack.Add(5);
-
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            stack.Add(6);
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
+            int[] array = new int[] { 10, 15, 6, 3, 12, 8, 1, 100, 500, 18, 0, -4, 3550, 800, 12 };
+            Console.WriteLine(string.Join(" ", BubbleSort<int>.BubbleSortFunction(array)));
         }
     }
 }
