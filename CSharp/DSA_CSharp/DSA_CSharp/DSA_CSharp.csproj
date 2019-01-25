@@ -53,6 +53,7 @@
     <Compile Include="src\Linear_Structures\Stack\IStack.cs" />
     <Compile Include="src\Linear_Structures\Stack\Stack.cs" />
     <Compile Include="src\Sorting\BubbleSort.cs" />
+    <Compile Include="src\Sorting\CountingSort.cs" />
     <Compile Include="src\Sorting\MergeSort.cs" />
   </ItemGroup>
   <ItemGroup>
