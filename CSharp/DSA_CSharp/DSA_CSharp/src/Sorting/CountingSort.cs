@@ -14,7 +14,7 @@
             int[] sorted = new int[array.Length];
             int index = 0;
 
-            for (int i = 0; i < max + 1; i++)
+            for (int i = max; i > 20; i--)
             {
                 for (int j = 0; j < counts[i]; j++)
                 {
