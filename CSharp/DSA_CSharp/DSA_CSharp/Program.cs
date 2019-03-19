@@ -1,4 +1,4 @@
-﻿using DSA_CSharp.src.Linear_Structures.Queue;
+﻿using DSA_CSharp.src.Linked_Lists;
 using System;
 
 namespace DSA_CSharp
@@ -7,20 +7,19 @@ namespace DSA_CSharp
     {
         public static void Main()
         {
-            var queue = new Queue<int>();
+            SinglyLinkedList<int> singleLinkedList = new SinglyLinkedList<int>();
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 100; i++)
             {
-                queue.Add(i + 1);
+                singleLinkedList.AddNode(new SingleLinkedListNode<int>(i));
             }
 
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(queue.Remove());
-            }
+            singleLinkedList.AddNode(new SingleLinkedListNode<int>(100), 3);
+            singleLinkedList.AddNode(new SingleLinkedListNode<int>(102), 200);
+            singleLinkedList.AddNode(new SingleLinkedListNode<int>(101), 3);
+            singleLinkedList.AddNode(new SingleLinkedListNode<int>(103), 500);
 
-            queue.Add(1001);
-            Console.WriteLine(queue.Remove());
+            singleLinkedList.ShowNodes();
         }
     }
 }
