@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DSA_CSharp.src.Linked_Lists
 {
-    public class SingleLinkedListNode<T>
+    public class SingleLinkedListNode<T> where T:IComparable
     {
         public T value;
         public SingleLinkedListNode<T> next;

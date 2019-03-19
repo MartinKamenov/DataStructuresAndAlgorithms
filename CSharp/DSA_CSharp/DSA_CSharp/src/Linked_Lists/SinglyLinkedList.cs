@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSA_CSharp.src.Linked_Lists
 {
-    public class SinglyLinkedList<T>
+    public class SinglyLinkedList<T> where T:IComparable
     {
         public SingleLinkedListNode<T> head;
 
@@ -65,6 +65,46 @@ namespace DSA_CSharp.src.Linked_Lists
             last.next = node;
 
             return;
+        }
+
+        public bool RemoveElementByKey(T key)
+        {
+            if (this.head != null && this.head.value.CompareTo(key) == 0)
+            {
+                if(this.head.next != null)
+                {
+                    this.head = this.head.next;
+                    return true;
+                }
+
+                this.head = null;
+                return true;
+            }
+
+            SingleLinkedListNode<T> node = this.head;
+
+            while (node.next != null && node.next.value.CompareTo(key) != 0)
+            {
+                node = node.next;
+            }
+
+            if (node.next == null)
+            {
+                return false;
+            }
+
+            if (node.next != null && node.next.next != null)
+            {
+                node.next = node.next.next;
+                return true;
+            }
+
+            if (node.next != null && node.next.next == null)
+            {
+                node.next = node.next.next;
+            }
+
+            return true;
         }
 
         public void ShowNodes()
