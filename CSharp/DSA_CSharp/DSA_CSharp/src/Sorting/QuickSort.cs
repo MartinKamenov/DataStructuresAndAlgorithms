@@ -8,6 +8,11 @@ namespace DSA_CSharp.src.Sorting
 {
     public class QuickSort<T> where T : IComparable
     {
+        // QuickSort sort selects a pivot and allocates two arrays. 
+        // One that than has smaller values than pivot and one that has bigger.
+        // Afterwards it does this recursively until only one element is left.
+        // Then we return an array with the concatednated smaller and bigger than pivot arrays and the pivot at between.
+
         public static T[] QuickSortFunction(T[] array) 
         {
             if (array.Length <= 1)
