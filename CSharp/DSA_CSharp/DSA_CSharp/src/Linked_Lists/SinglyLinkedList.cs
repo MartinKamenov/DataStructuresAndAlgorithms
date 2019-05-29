@@ -107,6 +107,33 @@ namespace DSA_CSharp.src.Linked_Lists
             return true;
         }
 
+        public bool RemoveElementByIndex(int position)
+        {
+            if (position == 0 && this.head != null && this.head.next != null)
+            {
+                this.head = this.head.next;
+                return true;
+            }
+
+            SingleLinkedListNode<T> current = this.head;
+            int index = 1;
+
+            while (current != null && index != position)
+            {
+                current = current.next;
+                index++;
+            }
+
+            if (current == null)
+            {
+                return false;
+            }
+
+            current.next = current.next.next;
+
+            return true;
+        }
+
         public void ShowNodes()
         {
             SingleLinkedListNode<T> node = this.head;

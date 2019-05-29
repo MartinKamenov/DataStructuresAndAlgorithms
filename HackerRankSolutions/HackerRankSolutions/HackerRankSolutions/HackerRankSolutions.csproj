@@ -46,6 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="solutions\AVeryVeryBigSum.cs" />
+    <Compile Include="solutions\BiggerIsGreater.cs" />
     <Compile Include="solutions\CompareTheTriplets.cs" />
     <Compile Include="solutions\DiagonalDifference.cs" />
     <Compile Include="solutions\FormingAMagicSquare.cs" />
