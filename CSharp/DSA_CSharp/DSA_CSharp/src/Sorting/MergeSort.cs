@@ -8,12 +8,24 @@ namespace DSA_CSharp.src.Sorting
 {
     public class MergeSort<T> where T:IComparable
     {
-        // Merge sort works on the two half of the array that is passed.
-        // Afterwards it calls itself this recursively until only one element is left.
-        // After recursion is done we have the two halfs that are sorted arrays.
-        // We merge them into one array, checking element by element from the left and right
-        // deciding which should element should be added first.
+        /// <summary>
+        /// Uses merge sort to sort elements in array
+        /// </summary>
+        public static T[] MergeSortWithoutAllocatingArray(T[] arr)
+        {
+            return MergeSortWithoutAllocatingArray(0, arr.Length, arr);
+        }
 
+        /*
+            Merge sort works on the two half of the array that is passed.
+            Afterwards it calls itself this recursively until only one element is left.
+            After recursion is done we have the two halfs that are sorted arrays.
+            We merge them into one array, checking element by element from the left and right
+            deciding which should element should be added first.
+        */
+        /// <summary>
+        /// Uses merge sort to sort elements in array, given start and end for sorting part
+        /// </summary>
         public static T[] MergeSortWithoutAllocatingArray(int start, int end, T[] arr)
         {
             if (end - start <= 1)
