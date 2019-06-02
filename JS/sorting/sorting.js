@@ -53,3 +53,20 @@ Array.prototype.quickSort = function() {
     const finalArray = sortedLeft.concat(sortedRight);
     return finalArray;
 };
+
+Array.prototype.bubbleSort = function() {
+    const arr = this;
+    
+    let copyOfArr = arr.slice(0, arr.length);
+    for(let i = arr.length - 1; i >= 0; i--) {
+        for(let j = 0; j < i; j++) {
+            if(copyOfArr[j] > copyOfArr[j + 1]) {
+                const swap = copyOfArr[j];
+                copyOfArr[j] = copyOfArr[j + 1];
+                copyOfArr[j + 1] = swap;
+            }
+        }
+    }
+
+    return copyOfArr;
+};

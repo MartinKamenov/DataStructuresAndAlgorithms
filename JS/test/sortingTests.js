@@ -1,10 +1,18 @@
 const sorting = require('../sorting/sorting');
 const assert = require('chai').assert;
 let elements;
+let startTime;
 
 beforeEach(function(done) {
     // Setup
     elements = [10, 15, -5, 6, 11];
+    startTime = new Date();
+    done();
+});
+
+afterEach(function(done) {
+    const endTime = new Date();
+    console.log(endTime - startTime + ' miliseconds');
     done();
 });
 
@@ -34,7 +42,7 @@ describe('Merge sort', function () {
         assert.deepEqual(sortedElements, []);
     });
 
-    it('should sort correctly when 1000 elements are passed', function() {
+    it('should sort correctly when 1000 elements reversed are passed', function() {
         // Arrange
         const thousandElements = [];
         for(let i = 0; i < 1000; i++) {
@@ -77,7 +85,7 @@ describe('Quick sort', function () {
         assert.deepEqual(sortedElements, []);
     });
 
-    it('should sort correctly when 1000 elements are passed', function() {
+    it('should sort correctly when 1000 elements reversed are passed', function() {
         // Arrange
         const thousandElements = [];
         for(let i = 0; i < 1000; i++) {
@@ -85,6 +93,92 @@ describe('Quick sort', function () {
         }
         // Act
         const sortedElements = thousandElements.quickSort();
+        const expected = [];
+        for(let i = 0; i < 1000; i++) {
+            expected.push(i + 1);
+        }
+        // Assert
+        assert.deepEqual(sortedElements, expected);
+    });
+});
+
+describe('Merge sort', function () {
+    it('should sort correctly multiple numbers', function () {
+        // Arrange & Act
+        const sortedElements = elements.mergeSort();
+        // Assert
+        assert.deepEqual(sortedElements, [-5, 6, 10, 11, 15]);
+    });
+
+    it('should sort correctly when only one element is passed', function () {
+        // Arrange
+        const arrayWithOneElement = [1];
+        // Act
+        const sortedElements = arrayWithOneElement.mergeSort();
+        // Assert
+        assert.deepEqual(sortedElements, [1]);
+    });
+
+    it('should sort correctly when no elements are passed', function () {
+        // Arrange
+        const arrayWithNoElements = [];
+        // Act
+        const sortedElements = arrayWithNoElements.mergeSort();
+        // Assert
+        assert.deepEqual(sortedElements, []);
+    });
+
+    it('should sort correctly when 1000 elements reversed are passed', function() {
+        // Arrange
+        const thousandElements = [];
+        for(let i = 0; i < 1000; i++) {
+            thousandElements.push(1000 - i);
+        }
+        // Act
+        const sortedElements = thousandElements.mergeSort();
+        const expected = [];
+        for(let i = 0; i < 1000; i++) {
+            expected.push(i + 1);
+        }
+        // Assert
+        assert.deepEqual(sortedElements, expected);
+    });
+});
+
+describe('Bubble sort', function () {
+    it('should sort correctly multiple numbers', function () {
+        // Arrange & Act
+        const sortedElements = elements.bubbleSort();
+        // Assert
+        assert.deepEqual(sortedElements, [-5, 6, 10, 11, 15]);
+    });
+
+    it('should sort correctly when only one element is passed', function () {
+        // Arrange
+        const arrayWithOneElement = [1];
+        // Act
+        const sortedElements = arrayWithOneElement.bubbleSort();
+        // Assert
+        assert.deepEqual(sortedElements, [1]);
+    });
+
+    it('should sort correctly when no elements are passed', function () {
+        // Arrange
+        const arrayWithNoElements = [];
+        // Act
+        const sortedElements = arrayWithNoElements.bubbleSort();
+        // Assert
+        assert.deepEqual(sortedElements, []);
+    });
+
+    it('should sort correctly when 1000 elements reversed are passed', function() {
+        // Arrange
+        const thousandElements = [];
+        for(let i = 0; i < 1000; i++) {
+            thousandElements.push(1000 - i);
+        }
+        // Act
+        const sortedElements = thousandElements.bubbleSort();
         const expected = [];
         for(let i = 0; i < 1000; i++) {
             expected.push(i + 1);
