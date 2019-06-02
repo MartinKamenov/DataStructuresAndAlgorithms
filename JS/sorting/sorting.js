@@ -55,10 +55,8 @@ Array.prototype.quickSort = function() {
 };
 
 Array.prototype.bubbleSort = function() {
-    const arr = this;
-    
-    let copyOfArr = arr.slice(0, arr.length);
-    for(let i = arr.length - 1; i >= 0; i--) {
+    const copyOfArr = this.slice(0, this.length);
+    for(let i = copyOfArr.length - 1; i >= 0; i--) {
         for(let j = 0; j < i; j++) {
             if(copyOfArr[j] > copyOfArr[j + 1]) {
                 const swap = copyOfArr[j];
@@ -88,7 +86,7 @@ Array.prototype.countingSort = function() {
 
     const memoArr = [];
     for(let i = min; i < max + 1; i++) {
-        memoArr[-min + i] = 0;
+        memoArr[i - min] = 0;
     }
 
     for(let i = 0; i < arr.length; i++) {
@@ -104,4 +102,25 @@ Array.prototype.countingSort = function() {
     }
 
     return sortedArr;
+};
+
+Array.prototype.selectionSort = function() {
+    const arr = this.slice(0, this.length);
+    
+    for(let i = 0; i < arr.length; i++) {
+        let min = Number.MAX_SAFE_INTEGER;
+        let minIndex = 0;
+        for(let j = i; j < arr.length; j++) {
+            if(arr[j] < min) {
+                min = arr[j];
+                minIndex = j;
+            }
+        }
+
+        const swap = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = swap;
+    }
+
+    return arr;
 };
