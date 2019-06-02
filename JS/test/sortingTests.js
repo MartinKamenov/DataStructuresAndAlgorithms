@@ -44,14 +44,32 @@ describe('Merge sort', function () {
 
     it('should sort correctly when 1000 elements reversed are passed', function() {
         // Arrange
+        const count = 1000;
         const thousandElements = [];
-        for(let i = 0; i < 1000; i++) {
-            thousandElements.push(1000 - i);
+        for(let i = 0; i < count; i++) {
+            thousandElements.push(count - i);
         }
         // Act
         const sortedElements = thousandElements.mergeSort();
         const expected = [];
-        for(let i = 0; i < 1000; i++) {
+        for(let i = 0; i < count; i++) {
+            expected.push(i + 1);
+        }
+        // Assert
+        assert.deepEqual(sortedElements, expected);
+    });
+
+    it('should sort correctly when 10000 elements reversed are passed', function() {
+        // Arrange
+        const count = 10000;
+        const thousandElements = [];
+        for(let i = 0; i < count; i++) {
+            thousandElements.push(count - i);
+        }
+        // Act
+        const sortedElements = thousandElements.mergeSort();
+        const expected = [];
+        for(let i = 0; i < count; i++) {
             expected.push(i + 1);
         }
         // Assert
@@ -87,62 +105,38 @@ describe('Quick sort', function () {
 
     it('should sort correctly when 1000 elements reversed are passed', function() {
         // Arrange
+        const count = 1000;
         const thousandElements = [];
-        for(let i = 0; i < 1000; i++) {
-            thousandElements.push(1000 - i);
+        for(let i = 0; i < count; i++) {
+            thousandElements.push(count - i);
         }
         // Act
         const sortedElements = thousandElements.quickSort();
         const expected = [];
-        for(let i = 0; i < 1000; i++) {
+        for(let i = 0; i < count; i++) {
             expected.push(i + 1);
         }
         // Assert
         assert.deepEqual(sortedElements, expected);
     });
-});
 
-describe('Merge sort', function () {
-    it('should sort correctly multiple numbers', function () {
-        // Arrange & Act
-        const sortedElements = elements.mergeSort();
-        // Assert
-        assert.deepEqual(sortedElements, [-5, 6, 10, 11, 15]);
-    });
-
-    it('should sort correctly when only one element is passed', function () {
-        // Arrange
-        const arrayWithOneElement = [1];
-        // Act
-        const sortedElements = arrayWithOneElement.mergeSort();
-        // Assert
-        assert.deepEqual(sortedElements, [1]);
-    });
-
-    it('should sort correctly when no elements are passed', function () {
-        // Arrange
-        const arrayWithNoElements = [];
-        // Act
-        const sortedElements = arrayWithNoElements.mergeSort();
-        // Assert
-        assert.deepEqual(sortedElements, []);
-    });
-
-    it('should sort correctly when 1000 elements reversed are passed', function() {
-        // Arrange
-        const thousandElements = [];
-        for(let i = 0; i < 1000; i++) {
-            thousandElements.push(1000 - i);
-        }
-        // Act
-        const sortedElements = thousandElements.mergeSort();
-        const expected = [];
-        for(let i = 0; i < 1000; i++) {
-            expected.push(i + 1);
-        }
-        // Assert
-        assert.deepEqual(sortedElements, expected);
-    });
+    // Callstack exceded
+    // it('should sort correctly when 10000 elements reversed are passed', function() {
+    //     // Arrange
+    //     const count = 10000;
+    //     const thousandElements = [];
+    //     for(let i = 0; i < count; i++) {
+    //         thousandElements.push(count - i);
+    //     }
+    //     // Act
+    //     const sortedElements = thousandElements.quickSort();
+    //     const expected = [];
+    //     for(let i = 0; i < count; i++) {
+    //         expected.push(i + 1);
+    //     }
+    //     // Assert
+    //     assert.deepEqual(sortedElements, expected);
+    // });
 });
 
 describe('Bubble sort', function () {
@@ -173,14 +167,32 @@ describe('Bubble sort', function () {
 
     it('should sort correctly when 1000 elements reversed are passed', function() {
         // Arrange
+        const count = 1000;
         const thousandElements = [];
-        for(let i = 0; i < 1000; i++) {
-            thousandElements.push(1000 - i);
+        for(let i = 0; i < count; i++) {
+            thousandElements.push(count - i);
         }
         // Act
         const sortedElements = thousandElements.bubbleSort();
         const expected = [];
-        for(let i = 0; i < 1000; i++) {
+        for(let i = 0; i < count; i++) {
+            expected.push(i + 1);
+        }
+        // Assert
+        assert.deepEqual(sortedElements, expected);
+    });
+
+    it('should sort correctly when 10000 elements reversed are passed', function() {
+        // Arrange
+        const count = 10000;
+        const thousandElements = [];
+        for(let i = 0; i < count; i++) {
+            thousandElements.push(count - i);
+        }
+        // Act
+        const sortedElements = thousandElements.bubbleSort();
+        const expected = [];
+        for(let i = 0; i < count; i++) {
             expected.push(i + 1);
         }
         // Assert
