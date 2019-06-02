@@ -53,5 +53,3 @@ Array.prototype.quickSort = function() {
     const finalArray = sortedLeft.concat(sortedRight);
     return finalArray;
 };
-
-console.log([10, 9, 8, 1, 12, 13, -10, -1].quickSort());
