@@ -199,3 +199,64 @@ describe('Bubble sort', function () {
         assert.deepEqual(sortedElements, expected);
     });
 });
+
+describe('Counting sort', function () {
+    it('should sort correctly multiple numbers', function () {
+        // Arrange & Act
+        const sortedElements = elements.countingSort();
+        // Assert
+        assert.deepEqual(sortedElements, [-5, 6, 10, 11, 15]);
+    });
+
+    it('should sort correctly when only one element is passed', function () {
+        // Arrange
+        const arrayWithOneElement = [1];
+        // Act
+        const sortedElements = arrayWithOneElement.countingSort();
+        // Assert
+        assert.deepEqual(sortedElements, [1]);
+    });
+
+    it('should sort correctly when no elements are passed', function () {
+        // Arrange
+        const arrayWithNoElements = [];
+        // Act
+        const sortedElements = arrayWithNoElements.countingSort();
+        // Assert
+        assert.deepEqual(sortedElements, []);
+    });
+
+    it('should sort correctly when 1000 elements reversed are passed', function() {
+        // Arrange
+        const count = 1000;
+        const thousandElements = [];
+        for(let i = 0; i < count; i++) {
+            thousandElements.push(count - i);
+        }
+        // Act
+        const sortedElements = thousandElements.countingSort();
+        const expected = [];
+        for(let i = 0; i < count; i++) {
+            expected.push(i + 1);
+        }
+        // Assert
+        assert.deepEqual(sortedElements, expected);
+    });
+
+    it('should sort correctly when 10000 elements reversed are passed', function() {
+        // Arrange
+        const count = 10000;
+        const thousandElements = [];
+        for(let i = 0; i < count; i++) {
+            thousandElements.push(count - i);
+        }
+        // Act
+        const sortedElements = thousandElements.countingSort();
+        const expected = [];
+        for(let i = 0; i < count; i++) {
+            expected.push(i + 1);
+        }
+        // Assert
+        assert.deepEqual(sortedElements, expected);
+    });
+});
