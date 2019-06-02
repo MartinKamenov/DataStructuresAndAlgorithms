@@ -70,3 +70,38 @@ Array.prototype.bubbleSort = function() {
 
     return copyOfArr;
 };
+
+Array.prototype.countingSort = function() {
+    let min = Number.MAX_SAFE_INTEGER;
+    let max = Number.MIN_SAFE_INTEGER;
+    const arr = this;
+
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+
+        if(arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    const memoArr = [];
+    for(let i = min; i < max + 1; i++) {
+        memoArr[-min + i] = 0;
+    }
+
+    for(let i = 0; i < arr.length; i++) {
+        memoArr[arr[i] - min]++;
+    }
+
+    const sortedArr = [];
+
+    for(let i = 0; i < memoArr.length; i++) {
+        for(let j = 0; j < memoArr[i]; j++) {
+            sortedArr.push(i + min);
+        }
+    }
+
+    return sortedArr;
+};
