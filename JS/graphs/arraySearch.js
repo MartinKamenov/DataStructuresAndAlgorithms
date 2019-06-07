@@ -3,18 +3,22 @@
 // If array includes the symbol 'x' then this is not a path program can take
 
 const directionCollectibles = [
+    // Up
     {
         rowCollectable: -1,
         colCollectable: 0
     },
+    // Left
     {
         rowCollectable: 0,
         colCollectable: -1
     },
+    // Down
     {
         rowCollectable: 1,
         colCollectable: 0
     },
+    // Right
     {
         rowCollectable: 0,
         colCollectable: 1
@@ -39,12 +43,12 @@ const findClosesPath = (arr, row, col, moves, previousCells) => {
         const newRow = row + directionCollectibles[i].rowCollectable;
         const newCol = col + directionCollectibles[i].colCollectable;
 
-        if(previousCells[newRow + newCol + '']) {
+        if(previousCells['' + newRow + newCol]) {
             continue;
         }
 
         const newCells = Object.assign({}, previousCells);
-        newCells[newRow + newCol + ''] = true;
+        newCells['' + newRow + newCol] = true;
         const foundMoves = findClosesPath(arr, newRow, newCol, moves + 1, newCells);
         if(foundMoves < minimalMoves) {
             minimalMoves = foundMoves;
