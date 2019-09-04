@@ -1,1 +1,6 @@
 E:\DSA project\DataStructuresAndAlgorithms\CSharp\DSA_CSharp\DSA_CSharp\bin\Debug\DSA_CSharp.exe.config
+E:\DSA project\DataStructuresAndAlgorithms\CSharp\DSA_CSharp\DSA_CSharp\bin\Debug\DSA_CSharp.exe
+E:\DSA project\DataStructuresAndAlgorithms\CSharp\DSA_CSharp\DSA_CSharp\bin\Debug\DSA_CSharp.pdb
+E:\DSA project\DataStructuresAndAlgorithms\CSharp\DSA_CSharp\DSA_CSharp\obj\Debug\DSA_CSharp.csprojResolveAssemblyReference.cache
+E:\DSA project\DataStructuresAndAlgorithms\CSharp\DSA_CSharp\DSA_CSharp\obj\Debug\DSA_CSharp.exe
+E:\DSA project\DataStructuresAndAlgorithms\CSharp\DSA_CSharp\DSA_CSharp\obj\Debug\DSA_CSharp.pdb

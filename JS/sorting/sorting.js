@@ -69,10 +69,9 @@ Array.prototype.bubbleSort = function() {
     return copyOfArr;
 };
 
-Array.prototype.countingSort = function() {
+const countingSort = function(arr) {
     let min = Number.MAX_SAFE_INTEGER;
     let max = Number.MIN_SAFE_INTEGER;
-    const arr = this;
 
     for(let i = 0; i < arr.length; i++) {
         if(arr[i] > max) {
@@ -93,16 +92,46 @@ Array.prototype.countingSort = function() {
         memoArr[arr[i] - min]++;
     }
 
-    const sortedArr = [];
+    let memoObjects = [];
+    memoArr.forEach((el, i) => memoObjects.push(
+        {
+            found: el,
+            number: i + min
+        }
+    ));
 
-    for(let i = 0; i < memoArr.length; i++) {
-        for(let j = 0; j < memoArr[i]; j++) {
-            sortedArr.push(i + min);
+    memoObjects = memoObjects.filter((el) => el.found !== 0).sort((a, b) => {
+        if(a.found === b.found) {
+            return a.number - b.number;
+        }
+        else {
+            return a.found - b.found;
+        }
+    });
+    const finalArr = [];
+    for(let i = 0; i < memoObjects.length; i++) {
+        const el = memoObjects[i];
+        for(let j = 0; j < el.found; j++) {
+            finalArr.push(el.number);
         }
     }
 
-    return sortedArr;
+    console.log(finalArr.join('\n'));
+
+    // const sortedArr = [];
+
+    // for(let i = 0; i < memoArr.length; i++) {
+    //     for(let j = 0; j < memoArr[i]; j++) {
+    //         sortedArr.push(i + min);
+    //     }
+    // }
+
+    // return sortedArr;
 };
+
+const sorted = countingSort([4, 5, 6, 5, 4, 3, -5, -5, -100]);
+console.log(sorted.join('\n'));
+// 3, 6, 4, 4, 5, 5
 
 Array.prototype.selectionSort = function() {
     const arr = this.slice(0, this.length);
