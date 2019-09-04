@@ -8,7 +8,7 @@ namespace HackerRankSolutions.solutions
 {
     public class MinMaxSum
     {
-        public static void Solve()
+        public static void Execute()
         {
             int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp));
 

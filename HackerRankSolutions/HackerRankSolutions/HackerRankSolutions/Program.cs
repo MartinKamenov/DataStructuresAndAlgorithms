@@ -6,7 +6,7 @@ namespace HackerRankSolutions
     {
         public static void Main(string[] args)
         {
-            BiggerIsGreater.Execute();
+            System.Console.WriteLine(BirthdayCakeCandles.Execute());
         }
     }
 }
