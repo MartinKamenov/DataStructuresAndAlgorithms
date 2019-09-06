@@ -53,6 +53,7 @@
     <Compile Include="solutions\DiagonalDifference.cs" />
     <Compile Include="solutions\FormingAMagicSquare.cs" />
     <Compile Include="solutions\GradingStudents.cs" />
+    <Compile Include="solutions\Kangaroo.cs" />
     <Compile Include="solutions\MinMaxSum.cs" />
     <Compile Include="solutions\StairCase.cs" />
   </ItemGroup>
