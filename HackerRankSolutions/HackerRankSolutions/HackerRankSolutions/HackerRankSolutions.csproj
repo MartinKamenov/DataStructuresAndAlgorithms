@@ -57,7 +57,9 @@
     <Compile Include="solutions\Kangaroo.cs" />
     <Compile Include="solutions\MinMaxSum.cs" />
     <Compile Include="solutions\PlusMinus.cs" />
+    <Compile Include="solutions\SimpleArraySum.cs" />
     <Compile Include="solutions\StairCase.cs" />
+    <Compile Include="solutions\TimeConversion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

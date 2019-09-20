@@ -6,7 +6,7 @@ namespace HackerRankSolutions
     {
         public static void Main(string[] args)
         {
-            PlusMinus.Solve();
+            TimeConversion.Solve();
         }
     }
 }
