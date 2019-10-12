@@ -53,6 +53,7 @@
     <Compile Include="solutions\BirthdayCakeCandles.cs" />
     <Compile Include="solutions\CompareTheTriplets.cs" />
     <Compile Include="solutions\DiagonalDifference.cs" />
+    <Compile Include="solutions\DivisibleSumPairs.cs" />
     <Compile Include="solutions\FormingAMagicSquare.cs" />
     <Compile Include="solutions\GradingStudents.cs" />
     <Compile Include="solutions\Kangaroo.cs" />
